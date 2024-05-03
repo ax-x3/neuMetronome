@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metronome</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <div id="display">
+        <table>
+            <tr>
+                <th style="width: 150px;">TEMPO</th><th style="width: 120px;">SIGNATURE</th><th style="width: 150px;">MEASURE . BEAT</th><th style="width: 300px;">HR : MIN : SEC . MS</th>
+            </tr>
+            <tr>
+                <td id="dTempo"><input id="tempoInput" type="number" placeholder="tempo" value="120"></td>
+                <td id="dTime"><input id="beatsInput" type="number" placeholder="beats" value="4"></td>
+                <td id="dCounter">000.00</td>
+                <td id="dTimer">00:00:00.000</td></tr>
+        </table>
+    </div>
+
+    <br>
+    <div id="pendulumContainer">
+        <div id="pendulumCenterMark"></div>
+        <div id="pendulum">
+            <div id="pendulumShown"></div>
+            <div id="pendulumHidden"></div>
+        </div>
+        <div id="pendulumBase"></div>
+    </div>
+
+    <div id="mainControls">
+        <button onmousedown="mTapTempo();" class="iconButton" style="background: #f00a; color: #fff;"><img src="button_icons/tap.png" height="25px"></button>
+        <button onclick="mRoundTempo();" class="iconButton"><img src="button_icons/quantize.png" height="25px"></button>
+        <button onmousedown="mStart(convertMsBpm(parseFloat(document.getElementById('tempoInput').value)), parseInt(document.getElementById('beatsInput').value));" class="iconButton" class="iconButton"><img src="button_icons/play.png" height="25px" style="position: relative; left: 2px;"></button>
+        <button onmousedown="mPause();" class="iconButton pressedButton" id="pauseButton"><img src="button_icons/pause.png" height="25px"></button>
+        <button onmousedown="mReset();" class="iconButton"><img src="button_icons/reset.png" height=25px;></button>
+    </div>
+
+    <br><br>
+    <div id="otherControls">
+        <button class="conjoinedL" onclick="mScaleTempo(2);">double time</button>
+        <button class="conjoinedR" onclick="mScaleTempo(0.5);">half time</button>
+        <span class="buttonSpacer"></span>
+        <button class="conjoinedL" onclick="mOffsetTime(20);">rush 20ms</button>
+        <button class="conjoinedR" onclick="mOffsetTime(-20);">drag 20ms</button>
+        <span class="buttonSpacer"></span>
+        <button class="conjoinedL" onclick="mOffsetCount(1);">rush 1 beat</button>
+        <button class="conjoinedR" onclick="mOffsetCount(-1);">drag 1 beat</button>
+    </div>
+    <br><br><br>
+
+    
+
+    <div id="options">
+        Options
+        <br>
+        <input type="checkbox" name="metronomeSound" id="metronomeSound" checked>
+        <label for="metronomeSound">Enable metronome sounds</label>
+        <br>
+        <input type="checkbox" name="metronomeFlash" id="metronomeFlash">
+        <label for="metronomeFlash">Fullscreen metronome flash</label>
+    </div>
+
+    <br><br>
+
+</body>
+</html>

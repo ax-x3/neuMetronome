@@ -1,0 +1,199 @@
+body {
+    margin: 30px 5%;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    background: #ddd;
+    transition: none;
+}
+
+button {
+    font: inherit;
+    font-weight: 400;
+    margin: 5px;
+    padding: 12px 10px;
+    color: #000;
+    border-radius: 25px;
+    border-width: 0;
+
+    box-shadow: #0008 4px 4px 8px, #fffa -4px -4px 8px;
+    background: #fff0;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.475) 100ms;
+}
+
+.iconButton {
+    width: 100px;
+    height: 50px;
+}
+
+button:not(.pressedButton):hover {
+    box-shadow: #000c 4px 4px 8px, #fffe -4px -4px 8px, 
+                inset #0002 4px 4px 8px, inset #fff2 -4px -4px 8px;
+}
+
+button:hover:active{
+    padding: 12px 12px 12px 8px;
+    color: #0009;
+    box-shadow: #fff2 2px 2px 4px, #0002 -2px -2px 4px, 
+                inset #0008 2px 2px 4px;
+    background: #0002;
+}
+
+.pressedButton {
+    width: 100px;
+    height: 50px;
+    padding: 12px 2px 12px 0px;
+
+    color: #0009;
+    opacity: 0.6;
+    box-shadow: #fff2 2px 2px 4px, #0002 -2px -2px 4px, 
+                inset #0008 2px 2px 4px;
+    background: #0002;
+}
+
+input {
+    font: inherit;
+    padding: 0 5px;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff4;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.475) 200ms;
+}
+
+input:hover {
+    background-color: #fff6;
+}
+
+#tempoInput {
+    width: 130px;
+}
+
+#beatsInput {
+    width: 90px;
+}
+
+#pendulumContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pendulumCenterMark {
+    position: relative;
+    z-index: -1;
+    top: 140px;
+    width: 250px;
+    height: 10px;
+    rotate: 90deg;
+    background: #f003;
+    margin-bottom: 10px;
+    border-radius: 100px 0 0 100px;
+
+}
+
+#pendulum {
+    transform-origin: bottom;
+}
+
+#pendulumShown {
+    width: 10px; 
+    height: 250px; 
+    background: #f00;
+    border-radius: 100px 100px 0 0;
+}
+#pendulumHidden {
+    width: 10px; 
+    height: 20px; 
+    background: #fff0;
+}
+
+#pendulumBase {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 25px;
+    background: #fff0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f00;
+    border-radius: 100px;
+}
+
+table {
+    border-radius: 20px;
+
+    padding: 10px;
+    box-shadow: #fff2 2px 2px 4px, #0002 -2px -2px 4px, 
+                inset #0008 2px 2px 4px;
+    background: #0002;
+
+
+    width: 100%;
+    table-layout: fixed;
+    text-wrap: nowrap;
+}
+
+th {
+    min-width:200px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0006;
+    text-align: left;
+}
+
+td {
+    font-size: 40px;
+    font-weight: 200;
+    overflow:hidden;
+}
+
+#mainControls {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonSpacer {
+    width: 50px;
+}
+
+#otherControls {
+    display: flex;
+    justify-content: center;
+}
+
+#otherControls button {
+    width: 200px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.conjoinedL {
+    border-radius: 20px 0 0 20px;
+}
+
+.conjoinedR {
+    border-radius: 0 20px 20px 0;
+}
+
+#options {
+    font-size: 36px;
+    font-weight: 500;
+
+}
+
+input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: #f00;
+    margin: 4px;
+}
+
+label {
+    font-size: 24px;
+    font-weight: 300;
+    position: relative;
+    bottom: 3px;
+}
